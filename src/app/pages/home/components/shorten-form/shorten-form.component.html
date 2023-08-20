@@ -1,0 +1,31 @@
+<form
+  [formGroup]="formSearch"
+  class="relative w-full justify-center items-center space-y-3 md:space-y-0 md:gap-5 inline-flex flex-col md:flex-row bg-purple-900 p-5 md:py-[69px] md:px-[38px] rounded-[10px] bg-boost-device-xs md:bg-desktop md:bg-boost-device-md"
+>
+  <app-input
+    class="w-full md:w-auto grow"
+    data-cy="url-input"
+    [options]="{
+      placeholder: 'Enter your link here',
+      controlName: 'link',
+      error:
+        link?.errors?.['required'] && (link?.dirty || link?.touched)
+          ? 'Please add a link'
+          : ''
+    }"
+  />
+  <app-button
+    class="w-full md:w-auto"
+    data-cy="button-submit-url"
+    [options]="{
+      text: submitting ? 'Loading...' : 'Shorten it!',
+      rounded: 'md'
+    }"
+    (click)="submit()"
+  />
+  <div
+    class="text-xs md:text-base text-red-500 absolute md:left-10 md:bottom-6 left-6 bottom-2"
+  >
+    <p data-cy="error-text" *ngIf="errorMessage">{{ errorMessage }}</p>
+  </div>
+</form>
