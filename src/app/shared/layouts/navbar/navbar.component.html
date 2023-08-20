@@ -1,0 +1,44 @@
+<nav
+  class="hidden md:block w-full h-[62px] justify-between items-center inline-flex"
+>
+  <div class="h-12 justify-between items-center gap-28 flex">
+    <div class="text-gray-800 text-[32px] font-semibold">Shortly</div>
+    <ul
+      class="justify-start items-start gap-9 flex text-gray-500 text-xl font-medium list-none"
+    >
+      <li>Features</li>
+      <li>Pricing</li>
+      <li>Resources</li>
+    </ul>
+    <div class="h-[62px] justify-between items-center gap-10 flex">
+      <div class="text-gray-500 text-base font-semibold">Login</div>
+      <app-button [options]="{ text: 'Sign Up', rounded: 'lg' }" />
+    </div>
+  </div>
+</nav>
+<nav class="flex justify-between md:hidden">
+  <img src="/assets/images/logo.svg" alt="logo" srcset="" />
+  <img
+    src="/assets/images/nav-menu.svg"
+    alt="mobile-nav"
+    srcset=""
+    (click)="showMenu = !showMenu"
+  />
+</nav>
+<div
+  [@menuAnimation]="showMenu ? 'show' : 'hide'"
+  class="bg-gray-800 rounded-[9px] w-full mt-2 py-11 md:hidden absolute z-10 left-0 right-0 mx-auto max-w-[92%]"
+>
+  <ul
+    class="list-none text-[19px] text-white font-semibold space-y-7 text-center"
+  >
+    <li>Features</li>
+    <li>Pricing</li>
+    <li>Resources</li>
+  </ul>
+  <div class="bg-gray-600 w-full h-0.5 my-9"></div>
+  <div class="justify-between items-center gap-10 flex flex-col">
+    <div class="text-white text-xl font-semibold">Login</div>
+    <app-button [options]="{ text: 'Sign Up', rounded: 'lg' }" />
+  </div>
+</div>
