@@ -1,0 +1,73 @@
+<section class="grid grid-cols-1 sm:grid-cols-2 md:mt-[164px] gap-12">
+  <div class="flex-col justify-start items-start gap-7 inline-flex">
+    <article
+      class="flex-col justify-start items-start gap-4 flex text-center sm:text-left mt-[354px] sm:mt-0"
+    >
+      <h1 class="text-gray-800 text-[42px] sm:text-6xl font-bold leading-10">
+        More than just shorter links
+      </h1>
+      <p class="text-center sm:text-left text-gray-500 text-lg font-medium">
+        Build your brand’s recognition and get detailed insights on how your
+        links are performing.
+      </p>
+    </article>
+    <app-button
+      class="mx-auto sm:mx-0"
+      [options]="{ text: 'Get Started', rounded: 'lg' }"
+    />
+  </div>
+  <div>
+    <img
+      src="/assets/images/illustration-working.svg"
+      alt=""
+      srcset=""
+      class="absolute top-24 sm:top-[200px] right-0 translate-x-[90px] z-0"
+    />
+  </div>
+</section>
+<section class="mt-15 md:mt-24 relative z-10">
+  <app-shorten-form
+    [errorMessage]="errorMessage"
+    [submitting]="isSubmitting"
+    (submitForm)="submitUrl($event)"
+  />
+</section>
+<section *ngIf="shortenList.length" class="mt-10">
+  <h5 class="md:ml-[38px] text-gray-400 text-lg font-semibold md:mb-8">
+    Your links
+  </h5>
+  <div class="flex flex-col space-y-4">
+    <ng-container *ngFor="let card of shortenList; let i = index">
+      <app-card-link
+        [copyIndex]="copyIndex"
+        [options]="{
+          index: i,
+          link: card?.original_link || '',
+          shortLink: card?.short_link || ''
+        }"
+        (onCopy)="onCopyUrl(i, card?.short_link || '')"
+      />
+    </ng-container>
+  </div>
+</section>
+<article class="mt-[74px] md:max-w-xl mx-auto">
+  <h3 class="text-[34px] font-semibold text-center">Advanced Statistics</h3>
+  <p class="text-lg text-center text-gray-500">
+    Track how your links are performing across the web with our advanced
+    statistics dashboard.
+  </p>
+</article>
+<app-story />
+<section class="mt-[102px] h-[237px] md:h-[247px]">
+  <div
+    class="absolute py-[58px] w-full left-0 bg-purple-900 text-center bg-bottom-boost-xs md:bg-bottom-boost-md px-8 md:px-0 bg-no-repeat bg-cover"
+  >
+    <h3 class="text-[28px] md:text-[34px] text-white font-semibold mb-5">
+      Boost your links today
+    </h3>
+    <app-button
+      class="flex w-fit mx-auto md:mx-0 md:block md:w-auto"
+      [options]="{ text: 'Get started', rounded: 'lg' }"
+    />
+  </div>
+</section>
