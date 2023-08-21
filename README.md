@@ -1,46 +1,23 @@
-### Objective
+# Shortly WEB
 
-Using TypeScript and Angular and TailwindCSS, your challenge is to build out a URL shortening web app, integrate with the [shrtcode API](https://app.shrtco.de/docs), and get it looking as close to the design as possible.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10. Using `Tailwind` for styling library, and use `es-lint` as static analyzed code also `cypress` for testing.
 
-### Brief
+## Development server
 
-URL shortening is a technique on the Web in which a Uniform Resource Locator (URL) may be made substantially shorter and still direct to the required page. This is achieved by using a redirect that links to the web page that has a long URL. For example, the URL "https://example.com/assets/category_B/subcategory_C/Foo/" can be shortened to "https://example.com/Foo", and the URL "http://example.com/about/index.html" can be shortened to "https://goo.gl/aO3Ssc ".
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-Your challenge is to build out this landing page, integrate with the [shrtcode API](https://app.shrtco.de/docs) and get it looking as close to the design as possible.
+## Code scaffolding
 
-Your users should be able to:
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
--   View the optimal layout for the site depending on their device's screen size
--   Shorten any valid URL
--   See a list of their shortened links, even after refreshing the browser
--   Copy the shortened link to their clipboard in a single click
--   Receive an error message when the `form` is submitted if:
-    -   The `input` field is empty
+## Build
 
-Your task is to build out the project corresponding to the [Figma Project](https://www.figma.com/file/uZubtaHZj6q7Y7mIBsLICA/Untitled?type=design&node-id=1%3A3&mode=design&t=VKObA0tOqB21NAft-1). You will find both a mobile and a desktop version of the design to work to along with active states.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-You will find all the required assets in the `/src/assets/images` folder. The assets are already optimized. The designs are in JPG static format.
+## Running end-to-end tests
 
-This project should use TailwindCSS to build the page.
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-### Evaluation Criteria
+## CI / CD
 
--   **TypeScript** best practices
--   Show us your work through your commit history
--   We're looking for you to produce working code, with enough room to demonstrate how to structure components in a small program
--   Completeness: did you complete the features?
--   Correctness: does the functionality act in sensible, thought-out ways?
--   Maintainability: is it written in a clean, maintainable way?
--   Testing: is the system adequately tested?
-
-### Deliverables
-
-Make sure to include all source code in the repository.
-
-### Closing Words
-
-Please organize, design, test, and document your code as if it were going into production - then push your changes to the master branch. After you have pushed your code, you may submit the assignment on the assignment page.
-
-**Have fun building!**
-
-Brimvoid 🚀
+This repository will execute `deploy.yml` that will make sure no code bug, code convention and verify code quality using `es-lint` and will run the test case under `cypress/` directory, and finally will build and deploy to github pages 
