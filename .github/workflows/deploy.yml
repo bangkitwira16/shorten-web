@@ -23,10 +23,11 @@ jobs:
 
       - name: Lint code
         run: npm run lint
-      
+
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
+          working-directory: cypress/e2e
           component: true
 
       - name: Build and deploy
