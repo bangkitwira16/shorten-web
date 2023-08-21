@@ -45,7 +45,7 @@
           link: card?.original_link || '',
           shortLink: card?.short_link || ''
         }"
-        (onCopy)="onCopyUrl(i, card?.short_link || '')"
+        (copyClick)="onCopyUrl(i, card?.short_link || '')"
       />
     </ng-container>
   </div>

@@ -14,5 +14,5 @@ export class ButtonComponent {
     text: '',
     rounded: 'md',
   };
-  @Output() onClick = new EventEmitter();
+  @Output() buttonClick = new EventEmitter();
 }

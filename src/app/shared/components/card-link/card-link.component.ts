@@ -16,5 +16,5 @@ export class CardLinkComponent {
     shortLink: '',
   };
   @Input() copyIndex: null | number = null; 
-  @Output() onCopy = new EventEmitter();
+  @Output() copyClick = new EventEmitter();
 }
