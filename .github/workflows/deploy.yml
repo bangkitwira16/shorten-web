@@ -24,8 +24,11 @@ jobs:
       - name: Lint code
         run: npm run lint
 
-      - name: Run tests
-        run: npm cypress:run
+      - name: Install Cypress
+        run: npm install cypress
+
+      - name: Run Cypress tests
+        run: npx cypress run
 
       - name: Build and deploy
         run: |
