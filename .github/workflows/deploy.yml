@@ -12,6 +12,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      
+      - name: Configure Git user identity
+      run: |
+        git config --global user.email "bangkitwira@gmail.com"
+        git config --global user.name "bangkitwira16"
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -20,6 +25,9 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        
+      - name: Install gh-pages package
+      run: npm install gh-pages
 
       - name: Lint code
         run: npm run lint
