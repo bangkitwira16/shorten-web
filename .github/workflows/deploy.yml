@@ -27,7 +27,7 @@ jobs:
         run: npm install
 
       - name: Install gh-pages package
-      run: npm install gh-pages
+        run: npm install gh-pages
 
       - name: Lint code
         run: npm run lint
