@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -26,9 +26,6 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
-        with:
-          working-directory: cypress/e2e
-          component: true
 
       - name: Build and deploy
         run: |
