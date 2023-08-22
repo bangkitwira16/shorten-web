@@ -35,6 +35,8 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
+          git config --global user.name "bangkitwira16"
+          git config --global user.email "bangkitwira@gmail.com"
           git checkout -b gh-pages
           mv dist/shortly-web/* .
           git add .
