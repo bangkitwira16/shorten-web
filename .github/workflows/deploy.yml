@@ -41,4 +41,5 @@ jobs:
           mv dist/shortly-web/* .
           git add .
           git commit -m "Deploy Angular app to GitHub Pages"
-          git push origin gh-pages
+          git remote add origin_with_token https://bangkitwira16:${{ secrets.GH_TOKEN }}@github.com/bangkitwira16/shortly-web.git
+          git push origin_with_token gh-pages
