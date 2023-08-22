@@ -42,4 +42,6 @@ jobs:
           git add .
           git commit -m "Deploy Angular app to GitHub Pages"
           git remote add origin_with_token https://bangkitwira16:${{ secrets.GH_TOKEN }}@github.com/bangkitwira16/shortly-web.git
+          git fetch
+          git pull origin_wit_token gh-pages
           git push origin_with_token gh-pages
