@@ -23,7 +23,7 @@ jobs:
 
       # - name: Lint code
       #   run: npm run lint
-      
+
       # - name: Cypress run
       #   uses: cypress-io/github-action@v5
       #   with:
@@ -37,11 +37,9 @@ jobs:
         run: |
           git config --global user.name "bangkitwira16"
           git config --global user.email "bangkitwira@gmail.com"
-          mv dist/shortly-web/* .
-          cd dist/shortly-web
-          git init
           git checkout -b gh-pages
-          git add .
+          mv dist/shortly-web/* .
+          git add --work-tree=dist/shortly-web .
           git commit -m "Deploy Angular app to GitHub Pages"
           git remote add origin_with_token https://bangkitwira16:${{ secrets.GH_TOKEN }}@github.com/bangkitwira16/shortly-web.git
           git fetch
