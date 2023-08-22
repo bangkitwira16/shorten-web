@@ -20,4 +20,4 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## CI / CD
 
-This repository will execute `deploy.yml` that will make sure no code bug, code convention and verify code quality using `es-lint` and will run the test case under `cypress/` directory, and finally will build and deploy to github pages 
+This repository will execute `deploy.yml` that will make sure no code bug, code convention and verify code quality using `es-lint` and will run the test case under `cypress/` directory, and finally will build and deploy to github pages and should be able to view the apps by visiting this url :[https://bangkitwira16.github.io/shortly-web/]( https://bangkitwira16.github.io/shortly-web/)
