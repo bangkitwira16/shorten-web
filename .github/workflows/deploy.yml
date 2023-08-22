@@ -39,7 +39,8 @@ jobs:
           git config --global user.email "bangkitwira@gmail.com"
           git checkout -b gh-pages
           mv dist/shortly-web/* .
-          git add --work-tree=dist/shortly-web .
+          git --git-dir=dist/shortly-web/.git --work-tree=dist/shortly-web add .
+          git --git-dir=dist/shortly-web/.git --work-tree=dist/shortly-web commit -m "Deploy Angular app to GitHub Pages"
           git commit -m "Deploy Angular app to GitHub Pages"
           git remote add origin_with_token https://bangkitwira16:${{ secrets.GH_TOKEN }}@github.com/bangkitwira16/shortly-web.git
           git fetch
