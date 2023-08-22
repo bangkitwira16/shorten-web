@@ -1,0 +1,23 @@
+<article
+  data-cy="shorten-result"
+  class="w-full flex flex-col md:flex-row md:items-center md:space-x-6 md:h-20 relative bg-white rounded-md shadow py-7 md:pl-[38px] md:pr-[26px]"
+>
+  <p
+    class="ml-5 md:ml-0 text-black text-[16px] md:text-xl font-medium grow truncate"
+  >
+    {{ options.link }}
+  </p>
+  <div class="bg-gray-200 border w-full md:hidden mt-3 mb-[14px]"></div>
+  <p class="ml-5 md:ml-0 text-teal-500 text-lg text-[22px] font-medium">
+    {{ options.shortLink }}
+  </p>
+  <app-button
+    data-cy="copy-button"
+    class="mt-3 md:mt-0 px-5 md:px-0"
+    [options]="{
+      text: copyIndex === options.index ? 'Copied' : 'Copy',
+      rounded: 'md'
+    }"
+    (click)="copyClick.emit()"
+  />
+</article>
