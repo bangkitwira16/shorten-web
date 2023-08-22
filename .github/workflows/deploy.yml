@@ -35,7 +35,7 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          git checkout gh-pages
+          git checkout -b gh-pages
           mv dist/shortly-web/* .
           git add .
           git commit -m "Deploy Angular app to GitHub Pages"
